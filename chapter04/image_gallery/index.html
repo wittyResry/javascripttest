@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Image Gallery</title>
+  <script type="text/javascript">
+    function showPic(whichpic) {
+      var source = whichpic.getAttribute("href");
+      var placeholder = document.getElementById("placeholder");
+      placeholder.setAttribute("src",source);
+      var text = whichpic.getAttribute("title");
+      var description = document.getElementById("description");
+      description.firstChild.nodeValue = text;
+    }
+  </script>
+  <style type="text/css">
+    body {
+      font-family: "Helvetica","Arial",serif;
+      color: #333;
+      background-color: #ccc;
+      margin: 1em 10%;
+    }
+    h1 {
+      color: #333;
+      background-color: transparent;
+    }
+    a {
+      color: #c60;
+      background-color: transparent;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    ul {
+      padding: 0;
+    }
+    li {
+      float: left;
+      padding: 1em;
+      list-style: none;
+    }
+    img {
+      display:block;
+      clear: both;
+    }
+  </style>
+  <link rel="stylesheet" href="styles/layout.css" type="text/css" media="screen" />
+</head>
+<body>
+  <h1>Snapshots</h1>
+  <ul>
+    <li>
+      <a href="images/IMG_2073_daochu.jpg" title="ZJU Library" onclick="showPic(this); return false;"> ZJU Library</a>
+    </li>
+    <li>
+      <a href="images/IMG_2088_daochu.jpg" title="Zhu Kezhen statue" onclick="showPic(this); return false;">Zhu Kezhen statue</a>
+    </li>
+    <li>
+      <a href="images/IMG_2135_daochu.jpg" title="Mao Zedong statue" onclick="showPic(this); return false;">Mao Zedong statue</a>
+    </li>
+    <li>
+      <a href="images/IMG_2152_daochu.jpg" title="School of Zhejiang University" onclick="showPic(this); return false;">School of Zhejiang University</a>
+    </li>
+  </ul>
+  <img id="placeholder" src="images/placeholder.gif" alt="my image gallery" height="340" width="512"/>
+  <p id="description">Choose an image.</p>
+</body>
+</html>
