@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Example</title>
+<script type="text/JavaScript">
+window.onload = function() {
+  if (!document.getElementsByTagName) return false;
+  var lnks = document.getElementsByTagName("a");
+  for (var i=0; i<lnks.length; i++) {
+    if (lnks[i].getAttribute("class") == "popup") {
+      lnks[i].onclick = function() {
+        popUp(this.getAttribute("href"));
+        return false;
+      }
+    }
+  }
+}
+
+function popUp(winURL) {
+  window.open(winURL,"popup","");
+}
+
+</script>
+  <style type="text/css">
+    .popup {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<a href="http://www.zju.edu.cn/" class="popup">Zju</a> </br>
+<a href="http://wittyresry.github.io/" class="popup">My blog</a>
+</body>
+</html>
